@@ -40,6 +40,7 @@ public class FileListener extends FileAlterationListenerAdaptor {
                 String ftpDirectory = file.getAbsolutePath().substring(directory.getAbsolutePath().length());
                 ftpDirectory = ftpConfig.getPath() + ftpDirectory.substring(0, ftpDirectory.lastIndexOf(File.separator));
                 f.put(file.getAbsolutePath(), file.getName(), ftpDirectory);
+                log.info("上传ftp文件成功:"+ftpDirectory+file.getName());
                 f.close();
             }
         } catch (Exception e) {
@@ -58,6 +59,7 @@ public class FileListener extends FileAlterationListenerAdaptor {
                 String ftpDirectory = file.getAbsolutePath().substring(directory.getAbsolutePath().length());
                 ftpDirectory = ftpConfig.getPath() + ftpDirectory.substring(0, ftpDirectory.lastIndexOf(File.separator));
                 f.put(file.getAbsolutePath(), file.getName(), ftpDirectory);
+                log.info("上传ftp文件成功:"+ftpDirectory+file.getName());
                 f.close();
             }
         } catch (Exception e) {
@@ -76,6 +78,7 @@ public class FileListener extends FileAlterationListenerAdaptor {
                 String ftpDirAndFileName = file.getAbsolutePath().substring(directory.getAbsolutePath().length());
                 ftpDirAndFileName = ftpConfig.getPath() + ftpDirAndFileName;
                 f.deleteFile(ftpDirAndFileName);
+                log.info("删除ftp文件成功:"+ftpDirAndFileName);
                 f.close();
             }
         } catch (Exception e) {
