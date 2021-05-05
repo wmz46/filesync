@@ -24,6 +24,11 @@
             <version>2.4</version>
         </dependency>
         <dependency>
+            <groupId>commons-net</groupId>
+            <artifactId>commons-net</artifactId>
+            <version>3.8.0</version>
+        </dependency>
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <scope>provided</scope>
@@ -47,7 +52,7 @@
                 <filtering>false</filtering>
                 <directory>src/main/resources</directory>
                 <excludes>
-                    <exclude>*.yml</exclude>
+<!--                    <exclude>*.yml</exclude>-->
                 </excludes>
             </resource>
         </resources>

@@ -2,7 +2,8 @@ filesync:
   rootDir: E:\Temp\ #监听本地文件夹
   interval: 1 #轮训间隔时间
   ftp:
-    ip:
-    port:
-    user:
-    password:
+    server:
+    port: 
+    userName:
+    userPassword:
+    path:
