@@ -1,9 +1,10 @@
 filesync:
-  rootDir: E:\Temp\ #监听本地文件夹
+  rootDir: C:\olivesrcfile\upload\ #监听本地文件夹
   interval: 1 #轮训间隔时间
   ftp:
-    server:
-    port: 
+    server: 
+    port:
     userName:
     userPassword:
-    path:
+    path: \wwwroot\upload # ftp目录
+    canDelete: false #是否可删除

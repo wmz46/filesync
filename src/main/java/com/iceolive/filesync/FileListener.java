@@ -73,16 +73,18 @@ public class FileListener extends FileAlterationListenerAdaptor {
     @Override
     public void onFileDelete(File file) {
         log.info("[删除文件]:" + file.getAbsolutePath());
-        try {
-            if (f.open()) {
-                String ftpDirAndFileName = file.getAbsolutePath().substring(directory.getAbsolutePath().length());
-                ftpDirAndFileName = ftpConfig.getPath() + ftpDirAndFileName;
-                f.deleteFile(ftpDirAndFileName);
-                log.info("删除ftp文件成功:"+ftpDirAndFileName);
-                f.close();
+        if(ftpConfig.getCanDelete()) {
+            try {
+                if (f.open()) {
+                    String ftpDirAndFileName = file.getAbsolutePath().substring(directory.getAbsolutePath().length());
+                    ftpDirAndFileName = ftpConfig.getPath() + ftpDirAndFileName;
+                    f.deleteFile(ftpDirAndFileName);
+                    log.info("删除ftp文件成功:" + ftpDirAndFileName);
+                    f.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-        } catch (Exception e) {
-            e.printStackTrace();
         }
     }
 

@@ -16,4 +16,5 @@ public class FtpConfig {
     private String userName;
     private String userPassword;
     private String path;
+    private Boolean canDelete;
 }
