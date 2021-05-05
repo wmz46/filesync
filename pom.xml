@@ -30,5 +30,26 @@
             <optional>true</optional>
         </dependency>
     </dependencies>
+    <build>
+        <finalName>avocado-web</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.iceolive.filesync.Application</mainClass>
+                </configuration>
+            </plugin>
 
+        </plugins>
+        <resources>
+            <resource>
+                <filtering>false</filtering>
+                <directory>src/main/resources</directory>
+                <excludes>
+                    <exclude>*.yml</exclude>
+                </excludes>
+            </resource>
+        </resources>
+    </build>
 </project>
