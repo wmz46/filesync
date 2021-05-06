@@ -19,10 +19,10 @@ filesync:
 ```cmd
 mvn package
 ```
-## 2.启动
+## 3.启动
 ```cmd
 java -jar filesync.jar
 ```
-## 3.todo list
+## 4.todo list
 -  [ ] 1.首次如何同步已存在文件
 -  [ ] 2.改成web项目，可以通过可视化管理文件，类似BCompare的文件夹比对
