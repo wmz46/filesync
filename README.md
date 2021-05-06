@@ -15,6 +15,10 @@ filesync:
     path: \wwwroot\upload # ftp目录
     canDelete: false #本地文件删除是否同步删除ftp上文件
 ```
+## 2.打包
+```cmd
+mvn package
+```
 ## 2.启动
 ```cmd
 java -jar filesync.jar
