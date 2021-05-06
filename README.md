@@ -8,10 +8,14 @@ filesync:
   rootDir: C:\olivesrcfile\upload\ #监听本地文件夹
   interval: 1 #轮训间隔时间
   ftp:
-    server: 0.0.0.0 #
-    port: 21
-    userName: abc
-    userPassword: 123456
+    server: 0.0.0.0 #ftp服务器地址
+    port: 21 #ftp端口
+    userName: abc #ftp用户名
+    userPassword: 123456 #ftp用户密码
     path: \wwwroot\upload # ftp目录
-    canDelete: false #是否可删除
+    canDelete: false #本地文件删除是否同步删除ftp上文件
+```
+## 2.启动
+```cmd
+java -jar filesync.jar
 ```
