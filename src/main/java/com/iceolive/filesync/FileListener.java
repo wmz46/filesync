@@ -40,7 +40,7 @@ public class FileListener extends FileAlterationListenerAdaptor {
                 String ftpDirectory = file.getAbsolutePath().substring(directory.getAbsolutePath().length());
                 ftpDirectory = ftpConfig.getPath() + ftpDirectory.substring(0, ftpDirectory.lastIndexOf(File.separator));
                 f.put(file.getAbsolutePath(), file.getName(), ftpDirectory);
-                log.info("上传ftp文件成功:"+ftpDirectory+file.getName());
+                log.info("上传ftp文件成功:" + ftpDirectory + "\\" + file.getName()+"，大小："+ file.length());
                 f.close();
             }
         } catch (Exception e) {
@@ -59,7 +59,7 @@ public class FileListener extends FileAlterationListenerAdaptor {
                 String ftpDirectory = file.getAbsolutePath().substring(directory.getAbsolutePath().length());
                 ftpDirectory = ftpConfig.getPath() + ftpDirectory.substring(0, ftpDirectory.lastIndexOf(File.separator));
                 f.put(file.getAbsolutePath(), file.getName(), ftpDirectory);
-                log.info("上传ftp文件成功:"+ftpDirectory+file.getName());
+                log.info("上传ftp文件成功:" + ftpDirectory + "\\" + file.getName()+"，大小："+ file.length());
                 f.close();
             }
         } catch (Exception e) {
@@ -73,7 +73,7 @@ public class FileListener extends FileAlterationListenerAdaptor {
     @Override
     public void onFileDelete(File file) {
         log.info("[删除文件]:" + file.getAbsolutePath());
-        if(ftpConfig.getCanDelete()) {
+        if (ftpConfig.getCanDelete()) {
             try {
                 if (f.open()) {
                     String ftpDirAndFileName = file.getAbsolutePath().substring(directory.getAbsolutePath().length());
