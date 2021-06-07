@@ -43,6 +43,7 @@ public class FtpClientUtil {
         }
         try {
             ftpClient = new FTPClient();
+
             // 连接
             ftpClient.connect(this.server, this.port);
             ftpClient.login(this.userName, this.userPassword);
@@ -186,6 +187,7 @@ public class FtpClientUtil {
                 // 创建目录
                 this.mkDir(ftpDirectory);
 
+                ftpClient.enterLocalPassiveMode();
                 ftpClient.setBufferSize(1024);
                 ftpClient.setControlEncoding("UTF-8");
 
